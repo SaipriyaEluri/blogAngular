@@ -1,0 +1,55 @@
+<main>
+<header>
+    <mat-toolbar>
+        <button (click)="menuClose()" mat-icon-button class="example-icon-menu" aria-label="Example icon-button with menu icon">
+          <mat-icon >menu</mat-icon>
+        </button> 
+        <span><b>B</b>logger App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>account_circle</mat-icon>
+          </button>    
+      </mat-toolbar>
+</header>
+<section class="d-flex">
+   
+        <!-- <div class="row no-gutters"> -->
+            <div>
+             
+              @if(!showMenu){
+                <aside mode="side" opened [style.width.px]="220">
+                  <div  class="mt-4" *ngFor="let item of menuItems">
+                   
+                        <button class="custom_btn d-flex" [routerLink]="item.path">
+                            <mat-icon style="font-size: 21px !important;">{{item.icon}}</mat-icon>
+                            <span class="item_name">{{item.name}}</span>
+                        </button>
+                   
+                  </div>
+                </aside>
+              }
+              @else{
+                <aside mode="side" opened [style.width.px]="85">
+                <div  class="mt-4" *ngFor="let item of menuItems">
+                   
+                  <button class="custom_btn_small d-flex" [routerLink]="item.path">
+                      <mat-icon style="font-size: 21px !important;" [title]="item.title">{{item.icon}}</mat-icon>
+                      <!-- <span class="item_name">{{item.name}}</span> -->
+                  </button>
+             
+            </div>
+          </aside>
+              }
+               
+            </div>
+            <div class="w-100">
+              <router-outlet></router-outlet>
+            </div>
+        <!-- </div> -->
+    </section>
+</main>
+  
+

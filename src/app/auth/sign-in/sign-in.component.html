@@ -1,0 +1,54 @@
+<!-- <div class="p-5">
+    <input type="text" [(ngModel)]="inputText">
+    <button class="btn btn-primary" (click)="onClick()">Click</button>
+</div>
+<app-sign-up></app-sign-up> -->
+
+<div class="container">
+
+  <div class="card p-5">
+    <h2 class="text-center">BLOGGER LOGIN</h2>
+    @if(!showOtp){
+    <form [formGroup]="signInForm" class="example-form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>UserName</mat-label>
+        <input type="email" matInput formControlName="username" placeholder="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="email" matInput formControlName="password" placeholder="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input type="number" matInput formControlName="mobileNumber" placeholder="">
+      </mat-form-field>
+
+      <button type="submit" class="w-100" mat-raised-button color="primary">Login</button>
+
+    </form>
+
+    <div class="text-center mt-3">
+      <h3>Don't have an Account ? <a routerLink="/auth/signUp">SignUp</a></h3>
+
+    </div>
+    }
+    @else if(showOtp){
+
+    <h3 class="text-center mb-3  px-5 pt-5">Verify OTP</h3>
+
+    <div class="text-center">
+      <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)"  [config]="{length:6}"></ng-otp-input>
+    </div>
+
+    <button type="submit" class="w-100 mt-5" mat-raised-button color="primary" (click)="verifyOTP()">Continue</button>
+
+    }
+  </div>
+</div>

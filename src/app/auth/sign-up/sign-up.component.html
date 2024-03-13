@@ -1,0 +1,52 @@
+<!-- <div class="p-5">
+
+    <p>You entered : {{enteredText}}</p>
+
+</div> -->
+
+<div class="container">
+    <div class="card p-5">
+        <h2 class="text-center">BLOGGER SIGN UP</h2>
+       
+        <form [formGroup]="signUpForm" class="example-form" (ngSubmit)="onSubmit()">
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input type="email" matInput formControlName="username" placeholder="">
+              </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="">
+          </mat-form-field>
+    
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="email" matInput formControlName="password" placeholder="">
+          </mat-form-field>
+    
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input type="number" matInput formControlName="mobileNumber" placeholder="">
+          </mat-form-field>
+
+          <mat-form-field sm sm-popup full class="w-100" appearance="outline">
+            <mat-label>Role</mat-label>
+            <mat-select  formControlName="role">
+                <mat-option
+                    *ngFor="let v of ['Admin','Author','Reader']; let i=index"
+                    [value]="v">{{v}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+          <button type="submit" class="w-100" mat-raised-button color="primary">Create Account</button>
+    
+          <div class="text-center mt-3">
+            <h3>Already have an Account ? <a routerLink="/auth/signIn">Login</a></h3>
+      
+          </div>
+
+        </form>
+       
+      </div>
+</div>
