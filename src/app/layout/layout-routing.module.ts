@@ -13,7 +13,7 @@ const routes: Routes = [
       {path:'dashboard', component:DashboardComponent},
       {path:'create-post',component:CreatePostComponent},
       {path:'posts',component:PostsComponent},
-      {path:'comments', component:CommentsComponent}
+      {path:'comments', component:CommentsComponent},
     ]
 }
 ];
