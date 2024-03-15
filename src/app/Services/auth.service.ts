@@ -9,7 +9,7 @@ export class AuthService {
 
   token:any;
 
-  apiUrl = "http://192.168.0.164:8081/blog/api";
+  apiUrl = "http://192.168.0.115:8081/blog/api";
 
   constructor(private http:HttpClient) { }
 
